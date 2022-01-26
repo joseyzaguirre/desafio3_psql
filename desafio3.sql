@@ -27,3 +27,9 @@ CREATE TABLE comentarios (
     FOREIGN KEY (post_id) REFERENCES posts (id),
     FOREIGN KEY (usuario_id) REFERENCES usuarios (id)    
 );
+
+ALTER TABLE usuarios ADD NAME VARCHAR (255) NOT NULL;
+
+\COPY usuarios FROM 'usuarios.csv' csv header;
+\COPY posts FROM 'posts.csv' csv header;
+\COPY comentarios FROM 'comentarios.csv' csv header;
